@@ -8,6 +8,11 @@ function isSameType(value1, value2) {
     value2 = Number(value2);
   }
 
+  // Check if both values are NaN
+  if (isNaN(value1) && isNaN(value2)) {
+    return true;
+  }
+
   // Check if one value is NaN and the other is a number
   if ((isNaN(value1) && typeof value2 === 'number') || (isNaN(value2) && typeof value1 === 'number')) {
     return false;
@@ -21,7 +26,7 @@ function isSameType(value1, value2) {
   // Check if the types are the same
   return true;
 }
-  
+
 // Example usage:
 let value1 = prompt("Enter Start of the Range.");
 let value2 = prompt("Enter End Of the Range.");
