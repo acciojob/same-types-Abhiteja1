@@ -8,6 +8,11 @@ function isSameType(value1, value2) {
     value2 = Number(value2);
   }
 
+  // Check if one value is NaN and the other is a number
+  if ((isNaN(value1) && typeof value2 === 'number') || (isNaN(value2) && typeof value1 === 'number')) {
+    return false;
+  }
+
   // Check if types are different and one of them is a string
   if (typeof value1 !== typeof value2) {
     return false;
